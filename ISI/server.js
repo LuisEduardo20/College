@@ -101,6 +101,7 @@ if (cluster.isMaster) {
             try {
                 switch (req.url) {
                     case "/":
+                        console.log(`Request from master received by worker ${cluster.worker.id}`);
                         res.writeHead(200, "content-type: 'text/plain'");
                         res.write(html);
                         res.end();
